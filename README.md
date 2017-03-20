@@ -5,23 +5,21 @@ Step 1- Clone this repo
 Step 2- Define your own problem!  
 SWAY accpets the problems defnied in [DEAP](http://deap.readthedocs.io/en/master/index.html)  
 The following is a very simple guide to use DEAP  
+After import the DEAP module, you should define the objective space and decision space.  
+Here we defined 4D minization objectives and the list as decision space  
+For details on [typecode here](here we have 4D minization objectives and the list as decision space)
 ```python
 from deap import base, creator, tools
-
-# After import the DEAP module, you should define the objective space and decision space.
-# e.g. here we have 4D minization objectives and the array as decision space
 creator.create('AllToMin', base.Fitness, weights=(-1.0, -1.0, -1.0, -1.0))
 creator.create('MyIndividual', array.array, typecode='d', fitness=creator.FitnessMin)
 
 # This is the definition of model evaluation
 def modelEvaluation(ind):
-  decs = ind
+  decs = ind  # now we can treat decs as the list
   # TODO add the model evaluation here...
   ind.fitness.values = (1,2,3,4)
 
-# This demostrate how to create an individual
-def random_pop():
-  return MyIndividual([1,2,3,4,5,6])
+rand_ind = MyIndividual([1,2,3,4,5,6])
 ```
 Step 3- Enjoy the sway to serach for optimum
 
