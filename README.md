@@ -16,9 +16,7 @@ creator.create('MyIndividual', array.array, typecode='d', fitness=creator.Fitnes
 # This is the definition of model evaluation
 def modelEvaluation(ind):
   decs = ind
-  # TODO add the model evaluation here
-  # ...
-  
+  # TODO add the model evaluation here...
   ind.fitness.values = (1,2,3,4)
 
 # This demostrate how to create an individual
