@@ -15,13 +15,13 @@ from deap import base, creator, tools
 creator.create('AllToMin', base.Fitness, weights=(-1.0, -1.0, -1.0, -1.0))
 creator.create('MyIndividual', array.array, typecode='d', fitness=creator.FitnessMin)
 
-# This is the definition of model evaluation
+# To create an individual is easy!
+rand_ind = MyIndividual([1,2,3,4,5,6])
+
+# Define your own evaluation function
 def modelEvaluation(ind):
   decs = ind  # now we can treat decs as the list
-  # TODO add the model evaluation here...
-  ind.fitness.values = (1,2,3,4)
-
-rand_ind = MyIndividual([1,2,3,4,5,6])
+  ind.fitness.values = (1.1, 2.2, 3.3, 4.4) # change (1.1, 2.2, 3.3, 4.4) here
 ```
 Step 3- Enjoy the sway to serach for optimum
 
