@@ -23,14 +23,12 @@ def modelEvaluation(ind):
 def random_pop():
   return MyIndividual([1,2,3,4,5,6])
 ```
-
+Step 3- Enjoy the sway to serach for optimum
 
 ```python
 from Algorithms import sway_continous, sway_discrete
-# generate initial candidates
-init = ... # 
-res = sway_continous.optimize(init, XOMO_OSP.eval)
-# print results
+init = ... # TODO list of initial candidates
+res = sway_continous.optimize(init, modelEvaluation)
 for i in res:
   print(i.fitness.values)
 ```
