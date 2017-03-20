@@ -28,8 +28,7 @@ def random_pop():
 ```python
 from Algorithms import sway_continous, sway_discrete
 # generate initial candidates
-init = generate_random_init(XOMO_OSP, 10000)
-# call the sway
+init = ... # 
 res = sway_continous.optimize(init, XOMO_OSP.eval)
 # print results
 for i in res:
