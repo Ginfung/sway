@@ -7,7 +7,7 @@ SWAY accpets the problems defnied in [DEAP](http://deap.readthedocs.io/en/master
 The following is a very simple guide to use DEAP  
 After import the DEAP module, you should define the objective space and decision space.  
 Here we defined 4D minization objectives and the list as decision space  
-For details on [typecode here](here we have 4D minization objectives and the list as decision space)
+For details on [typecode here](https://docs.scipy.org/doc/numpy/reference/generated/numpy.typename.html)
 ```python
 from deap import base, creator, tools
 creator.create('AllToMin', base.Fitness, weights=(-1.0, -1.0, -1.0, -1.0))
