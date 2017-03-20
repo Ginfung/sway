@@ -1,4 +1,4 @@
-# sway
+# SWAY
 
 ## How to use sway?
 Step 1- Clone this repo  
