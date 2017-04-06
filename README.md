@@ -45,7 +45,7 @@ for i in res:
   print(i.fitness.values)
 ```
 
-a)  _[what is Fitneess? weights](http://deap.readthedocs.io/en/master/tutorials/basic/part1.html)_ 
+a)  _[what is Fitneess? weights?](http://deap.readthedocs.io/en/master/tutorials/basic/part1.html)_   
 b) _[what is typecode?](https://docs.scipy.org/doc/numpy/reference/generated/numpy.typename.html)_  
 c) The objective of individual is assigned "in-place".
 The decision of the _ind_ can be accessed by `ind[0], ind[1],...`  
