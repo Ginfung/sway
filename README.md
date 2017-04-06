@@ -1,6 +1,6 @@
 # SWAY - The Sampling WAY
  
-## What is Sway?
+## What is SWAY?
 SWAY, the Sampling WAY, is baseline optimizer for multi-objective optimization problems, especially for the search-based software engineering problems.
 SWAY does not have the crossover and mutation in the standard evolutionary algorithm. Instead, it samples from a large candidate pool.
 
@@ -14,35 +14,37 @@ SWAY does not have the crossover and mutation in the standard evolutionary algor
 }
 ```
 
-## How to use sway?
-Step 1- Clone this repo  
-Step 2- Define your own problem!  
+## How to use SWAY?
+* Clone this repo
+* Define your own problem!
+* Create the initial candidate pool.
+* Use SWAY 
+
+In the following example, we create our own problem and use SWAY to search for optimum.
+
+
+
 SWAY accpets the problems defnied in [DEAP](http://deap.readthedocs.io/en/master/index.html)  
-The following is a very simple guide to use DEAP  
 
-After import the DEAP module, you should define the objective space and decision space.  
-Here we defined 4D minimization objectives and the list as decision space  
-_For details on [typecode here](https://docs.scipy.org/doc/numpy/reference/generated/numpy.typename.html)_
-
-```python
-from deap import base, creator, tools
-creator.create('AllToMin', base.Fitness, weights=(-1.0, -1.0, -1.0, -1.0))
-creator.create('MyIndividual', array.array, typecode='d', fitness=creator.FitnessMin)
-
-# To create an individual is easy!
-rand_ind = MyIndividual([1,2,3,4,5,6])
-
-# Define your own evaluation function
-def modelEvaluation(ind):
-  decs = ind  # now we can treat decs as the list
-  ind.fitness.values = (1.1, 2.2, 3.3, 4.4) # change (1.1, 2.2, 3.3, 4.4) here
-```
-Step 3- Enjoy the sway to serach for optimum
 
 ```python
 from Algorithms import sway_continous, sway_discrete
+from deap import base, creator, tools
+
+creator.create('ModelObj', base.Fitness, weights=(-1.0, -1.0, -1.0, -1.0))
+creator.create('ModelDec', array.array, typecode='d', fitness=creator.ModelObj)  # note-a
+
+# Define evaluation function
+def modelEvaluation(ind):
+  decs = ind  # now we can treat decs as the list
+  # objective computing is omitted...
+  # set the objective of the individual 'in-place'
+  ind.fitness.values = (1.1, 2.2, 3.3, 4.4) # chage numbers here
+
 init = ... # TODO list of initial candidates
 res = sway_continous.optimize(init, modelEvaluation)
 for i in res:
   print(i.fitness.values)
 ```
+
+a) _[what is typecode?](https://docs.scipy.org/doc/numpy/reference/generated/numpy.typename.html)_
