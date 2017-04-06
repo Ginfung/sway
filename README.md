@@ -24,7 +24,7 @@ In the following example, we create our own problem `Networking` with 4-dimensio
 
 
 
-SWAY accpets the problems defnied in [DEAP](http://deap.readthedocs.io/en/master/index.html)  
+SWAY accepts the problems defined in [DEAP](http://deap.readthedocs.io/en/master/index.html)  
 
 
 ```python
