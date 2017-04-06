@@ -1,4 +1,18 @@
-# SWAY
+# SWAY - The Sampling WAY
+ 
+## What is Sway?
+SWAY, the Sampling WAY, is baseline optimizer for multi-objective optimization problems, especially for the search-based software engineering problems.
+SWAY does not have the crossover and mutation in the standard evolutionary algorithm. Instead, it samples from a large candidate pool.
+
+## Reference
+```
+@article{chen2016sampling,
+  title={Is" Sampling" better than" Evolution" for Search-based Software Engineering?},
+  author={Chen, Jianfeng and Nair, Vivek and Krishna, Rahul and Menzies, Tim},
+  journal={arXiv preprint arXiv:1608.07617},
+  year={2016}
+}
+```
 
 ## How to use sway?
 Step 1- Clone this repo  
