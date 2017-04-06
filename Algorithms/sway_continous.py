@@ -66,5 +66,7 @@ def comparing(part1, part2):
 
 
 def optimize(init_pop, eval_func):
+    import warnings
+    warnings.filterwarnings('ignore')
     res = sway(init_pop, eval_func, where, comparing)
     return res

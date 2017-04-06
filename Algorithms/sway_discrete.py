@@ -80,4 +80,6 @@ def comparing(part1, part2):
 
 
 def optimize(init_pop, eval_func):
+    import warnings
+    warnings.filterwarnings('ignore')
     return sway(init_pop, eval_func, split_products, comparing)

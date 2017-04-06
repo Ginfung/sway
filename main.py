@@ -20,6 +20,4 @@ def demo1():
     return
 
 if __name__ == '__main__':
-    import warnings
-    warnings.filterwarnings('ignore')
     demo1()
