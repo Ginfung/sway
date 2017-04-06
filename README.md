@@ -34,11 +34,10 @@ from deap import base, creator, tools
 creator.create('ModelObj', base.Fitness, weights=(-1.0, -1.0, -1.0, -1.0))
 creator.create('ModelDec', array.array, typecode='d', fitness=creator.ModelObj)  # note-a
 
-# Define evaluation function
 def modelEvaluation(ind):
-  decs = ind  # now we can treat decs as the list
-  # objective computing is omitted...
-  # set the objective of the individual 'in-place'
+  ```
+  set the objective of the individual 'in-place'
+  ```
   ind.fitness.values = (1.1, 2.2, 3.3, 4.4) # chage numbers here
 
 init = ... # TODO list of initial candidates
