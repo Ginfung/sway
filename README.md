@@ -20,7 +20,7 @@ SWAY does not have the crossover and mutation in the standard evolutionary algor
 * Create the initial candidate pool.
 * Use SWAY 
 
-In the following example, we create our own problem and use SWAY to search for optimum.
+In the following example, we create our own problem `Networking` with 4-dimension objectives `QoS` and use SWAY to search for optimum.
 
 
 
@@ -31,13 +31,13 @@ SWAY accpets the problems defnied in [DEAP](http://deap.readthedocs.io/en/master
 from Algorithms import sway_continous, sway_discrete
 from deap import base, creator, tools
 
-creator.create('ModelObj', base.Fitness, weights=(-1.0, -1.0, -1.0, -1.0))
-creator.create('ModelDec', array.array, typecode='d', fitness=creator.ModelObj)  # note-a
+creator.create('Qos', base.Fitness, weights=(-1.0, -1.0, -1.0, -1.0))
+creator.create('Networking', array.array, typecode='d', fitness=creator.Qos)  # note-a
 
 def modelEvaluation(ind):
   ind.fitness.values = (1.1, 2.2, 3.3, 4.4) # note-b
 
-init = ... # TODO list of initial candidates
+init = ... # note-c
 res = sway_continous.optimize(init, modelEvaluation)
 for i in res:
   print(i.fitness.values)
@@ -45,4 +45,5 @@ for i in res:
 
 a) _[what is typecode?](https://docs.scipy.org/doc/numpy/reference/generated/numpy.typename.html)_  
 b) The objective of individual is assigned "in-place".
-The decision of the _ind_ can be accessed by `ind[0], ind[1],...` 
+The decision of the _ind_ can be accessed by `ind[0], ind[1],...`  
+c) Creating the candidates pool and put all into a list. A candidate can be created by `Networking([1,2,3,4,5,6])`
