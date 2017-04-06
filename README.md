@@ -35,10 +35,7 @@ creator.create('ModelObj', base.Fitness, weights=(-1.0, -1.0, -1.0, -1.0))
 creator.create('ModelDec', array.array, typecode='d', fitness=creator.ModelObj)  # note-a
 
 def modelEvaluation(ind):
-  ```
-  set the objective of the individual 'in-place'
-  ```
-  ind.fitness.values = (1.1, 2.2, 3.3, 4.4) # chage numbers here
+  ind.fitness.values = (1.1, 2.2, 3.3, 4.4) # note-b
 
 init = ... # TODO list of initial candidates
 res = sway_continous.optimize(init, modelEvaluation)
@@ -46,4 +43,6 @@ for i in res:
   print(i.fitness.values)
 ```
 
-a) _[what is typecode?](https://docs.scipy.org/doc/numpy/reference/generated/numpy.typename.html)_
+a) _[what is typecode?](https://docs.scipy.org/doc/numpy/reference/generated/numpy.typename.html)_  
+b) The objective of individual is assigned "in-place".
+The decision of the _ind_ can be accessed by `ind[0], ind[1],...` 
